@@ -37,9 +37,11 @@ export const tvApi = {
   airingToday: () => api.get("tv/airing_today", { params: tvPopularParams }),
   showDetail: id =>
     api.get(`tv/${id}`, {
-      api_key: "e6e0dd53c79220875187320b4265f3d6",
-      language: "en-US",
-      append_to_response: "videos"
+      params: {
+        api_key: "e6e0dd53c79220875187320b4265f3d6",
+        language: "en-US",
+        append_to_response: "videos"
+      }
     }),
   search: term =>
     api.get("search/tv", {
